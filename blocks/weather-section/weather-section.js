@@ -1,4 +1,4 @@
-export default function decorate(block) {
+export default async function decorate(block) {
   const div = document.createElement('div');
   const h1 = document.createElement('h1');
   h1.textContent = 'Weather Section';
@@ -12,7 +12,9 @@ export default function decorate(block) {
       return response.text();
     })
     .then((data) => {
-      div.innerHTML = data;
+      // eslint-disable-next-line no-undef
+      const sanitizedData = DOMPurify.sanitize(data);
+      div.innerHTML = sanitizedData;
     })
     .catch((error) => {
       console.error('Error fetching weather data:', error);
