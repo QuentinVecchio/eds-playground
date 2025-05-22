@@ -2,7 +2,7 @@ export default async function decorate(block) {
   const div = document.createElement('div');
   const h1 = document.createElement('h1');
   h1.textContent = 'Weather Section';
-  const weatherEndpoint = 'https://compute-backend-p131509-e1568482.adobeaemcloud.com/weather';
+  const weatherEndpoint = 'https://compute-backend-p131509-d527404.adobeaemcloud.com/weather';
 
   fetch(weatherEndpoint)
     .then((response) => {
