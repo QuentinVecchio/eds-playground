@@ -1,5 +1,5 @@
 import {
-  sanitizedData
+  sanitizeData
 } from '../../scripts/aem.js';
 
 export default async function decorate(block) {
@@ -16,7 +16,7 @@ export default async function decorate(block) {
       return response.text();
     })
     .then((data) => {
-      div.innerHTML = sanitizedData(data);
+      div.innerHTML = sanitizeData(data);
     })
     .catch((error) => {
       console.error('Error fetching weather data:', error);
