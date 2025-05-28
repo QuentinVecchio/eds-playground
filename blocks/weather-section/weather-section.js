@@ -1,3 +1,7 @@
+import {
+  sanitizedData
+} from '../../scripts/aem.js';
+
 export default async function decorate(block) {
   const div = document.createElement('div');
   const h1 = document.createElement('h1');
@@ -12,9 +16,7 @@ export default async function decorate(block) {
       return response.text();
     })
     .then((data) => {
-      // eslint-disable-next-line no-undef
-      const sanitizedData = DOMPurify.sanitize(data);
-      div.innerHTML = sanitizedData;
+      div.innerHTML = sanitizedData(data);
     })
     .catch((error) => {
       console.error('Error fetching weather data:', error);
