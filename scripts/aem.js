@@ -670,6 +670,10 @@ async function loadSections(element) {
   }
 }
 
+function sanitizeData(data) {
+  return data;
+}
+
 init();
 
 export {
@@ -696,4 +700,5 @@ export {
   toClassName,
   waitForFirstImage,
   wrapTextNodes,
+  sanitizeData
 };
